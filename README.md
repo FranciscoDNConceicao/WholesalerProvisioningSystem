@@ -4,7 +4,7 @@ The telecommunications operators, in order to expand their fixed network coverag
 
 The reservation process is synchronous, where the server responds to a customer's request for reservation with information on whether the reservation was successful or not, along with a unique reservation number associated with the household and modality. The activation, deactivation, and termination processes are asynchronous. When an external operator wishes to activate, deactivate, or terminate a fiber line, they send a request to the server, which is executed asynchronously. The client receives notifications through a message subscription system, to which they need to subscribe beforehand.
 
-The server-side procedures should be implemented as remote procedures in a client/server pattern. The following remote procedures need to be implemented with their specifications, along with handling of asynchronous messages:
+The server-side procedures  be implemented as remote procedures in a client/server pattern. The following remote procedures need to be implemented with their specifications, along with handling of asynchronous messages:
 
     RESERVATION:
         The client sends the modality and the household for which they want to make the reservation.
@@ -40,11 +40,11 @@ The server must:
     Persistently store information in a database (e.g., MS SQL Express or MySQL).
     Restrict the use of a household by multiple operators. Each reservation corresponds to a single operator.
 
-The server should be programmed using .NET Core 3, gRPC, and RabbitMQ for asynchronous message handling.
+The server is programmed using .NET Core 3, gRPC, and RabbitMQ for asynchronous message handling.
 
 The Client for the "Administrator/Operator" User:
 
-    The client should receive or request from the administrator/operator:
+    The client receive or request from the administrator/operator:
         An identification name for the administrator.
         A password for authentication.
     Connect to the server and list the available coverage.
@@ -53,25 +53,10 @@ The Client for the "Administrator/Operator" User:
 
 The Client for the "External Operator" User:
 
-    The client should receive or request from the operator:
+    The client receive or request from the operator:
         An identification name for the operator.
         A password for authentication.
     Connect to the server and perform the defined actions (reservation, activation, deactivation, termination of resources).
     Connect to the server and subscribe to the defined topic for the identified actions (reservation, activation, deactivation, termination of resources).
     The client can be programmed for platforms other than .NET Core, such as Android, PHP, or Python.
 
-Report Format:
-The work should be accompanied by a report of up to 4 pages (excluding annexes) describing the implementation choices. The source code should be included in the annex. The report should have the following sections:
-
-    Protocol: Describe the client/server communication protocol.
-    Implementation: Identify and describe the code parts implementing client handling, communication with each client, exposed remote procedures, messages for asynchronous communication, and external groups for information exchange.
-    Annex - Source Code: Include the annotated C# source code for the client and server. Provide the GitLab repository where the code is hosted and the issues created for task execution.
-
-Work Phases:
-The work should be developed incrementally in phases.
-
-    Design of the client/server communication protocol.
-    Implementation of user management and system maintenance.
-    Implementation of synchronous action processing functionality.
-    Implementation of notification/publication functionality for processes.
-    Implementation of subscription functionality for processes.
