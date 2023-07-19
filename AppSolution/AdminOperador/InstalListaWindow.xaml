@@ -1,0 +1,33 @@
+﻿<Window x:Class="AdminOperador.InstalListaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdminOperador"
+        mc:Ignorable="d"
+        Title="InstalListaWindow" Height="464" Width="800">
+    <Grid Background="#FF333333" Margin="0,0,0,-6">
+        <DataGrid x:Name="GridInstalacao" HorizontalAlignment="Center" Height="262" Margin="0,65,0,0" VerticalAlignment="Top" Width="752" BorderBrush="White" Background="#FF333333" FontFamily="Arial" HorizontalContentAlignment="Center">
+            <DataGrid.CellStyle>
+                <Style/>
+            </DataGrid.CellStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn FontFamily="Arial" FontSize="14" Header="Número Administrador" CanUserResize="False" Width="150" Binding="{Binding NumeroAdmin}"/>
+                <DataGridTextColumn CanUserResize="False" FontFamily="Arial" FontSize="14" Header="Domicilio" Width="100" Binding="{Binding Domicilio}"/>
+                <DataGridTextColumn CanUserResize="False" FontFamily="Arial" FontSize="14" Header="Tecnologia" Width="100" Binding="{Binding Tecnologia}"/>
+                <DataGridTextColumn CanUserResize="False" FontFamily="Arial" FontSize="14" Header="Estado" Width="150" Binding="{Binding Estado}"/>
+                <DataGridTextColumn CanUserResize="False" FontFamily="Arial" FontSize="14" Header="Modalidade" Width="100" Binding="{Binding Modalidade}"/>
+                <DataGridTextColumn CanUserResize="False" CanUserSort="True" FontFamily="Arial" FontSize="14" Header="Data da Reserva" SortDirection="Ascending" Width="150" Binding="{Binding Date}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="ReservaBttn" Content="Reserva" HorizontalAlignment="Left" Height="38" Margin="24,338,0,0" VerticalAlignment="Top" Width="172" BorderBrush="White" Background="{x:Null}" BorderThickness="4,4,4,4" FontSize="18" Foreground="White" FontFamily="Arial" Click="ReservaBttn_Click"/>
+        <Button x:Name="AtivacaoBttn" Content="Ativação" HorizontalAlignment="Left" Height="38" Margin="217,338,0,0" VerticalAlignment="Top" Width="172" BorderBrush="White" Background="{x:Null}" BorderThickness="4,4,4,4" FontSize="18" Foreground="White" FontFamily="Arial" Click="AtivacaoBttn_Click"/>
+        <Button x:Name="AtivacaoBttn_Copy" Content="Desativação" HorizontalAlignment="Left" Height="38" Margin="411,338,0,0" VerticalAlignment="Top" Width="172" BorderBrush="White" Background="{x:Null}" BorderThickness="4,4,4,4" FontSize="18" Foreground="White" FontFamily="Arial" Click="DesativacaoBttnClick"/>
+        <Button x:Name="TerminacaoBttn" Content="Terminação" HorizontalAlignment="Left" Height="38" Margin="604,338,0,0" VerticalAlignment="Top" Width="172" BorderBrush="White" Background="{x:Null}" BorderThickness="4,4,4,4" FontSize="18" Foreground="White" FontFamily="Arial" Click="TerminacaoBttnClick"/>
+        <Button x:Name="GestOperadoresBttn" Content="Gestão de Operadores" HorizontalAlignment="Left" Height="24" Margin="628,391,0,0" VerticalAlignment="Top" Width="148" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" FontWeight="Bold" Click="GestOperadoresBttn_Click"/>
+        <Label Content="Gestão de Instalações" HorizontalAlignment="Center" Height="42" Margin="0,18,0,0" VerticalAlignment="Top" Width="260" FontSize="24" FontWeight="Bold" Foreground="White"/>
+        <Button x:Name="DescarregarCsvBttn" Content="Descarregar ficheiro csv" HorizontalAlignment="Left" Height="24" Margin="24,391,0,0" VerticalAlignment="Top" Width="148" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" FontWeight="Bold" Click="DescarregarCsvBttn_Click"/>
+
+
+    </Grid>
+</Window>

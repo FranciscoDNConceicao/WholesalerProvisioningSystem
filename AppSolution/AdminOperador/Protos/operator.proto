@@ -1,0 +1,74 @@
+syntax = "proto3";
+
+option csharp_namespace = "AdminOperador";
+
+//Serviço Operador
+service Operator{
+	//Função que retorna todos as Instalações da base de dados
+	rpc ReturnAllInstal (tempvar) returns (stream Instalacao);
+	//Função que retorna todos os Operadores da base de dados
+	rpc ReturnAllOperador (tempvar) returns (stream OperadorPerfil);
+	//Função que verifica conta se está correta e se é um Administrador 
+	rpc AccountExist (Operador) returns (VerificarConta);
+	//Função que verifica qualquer tipo de conta 
+	rpc AccoutnExistOperadorExt (Operador) returns (VerificarConta);
+	//Função que reserva uma Instalacao e retorna o Numero de Administrador
+	rpc ReservaPossible (Instalacao) returns (NumeroAdministrador);
+	//Função que ativa uma Instalação e retorna se foi bem sucedido a operação ou não
+	rpc AtivacaoPossible (NumeroAdministrador) returns (IsPossible);
+	//Função que desativa uma Instalação e retorna se foi bem sucedido a operação ou não
+	rpc DesativacaoPossible (NumeroAdministrador) returns (IsPossible);
+	//Função que termina uma Instalação e retorna se foi bem sucedido a operação ou não
+	rpc TerminacaoPossible (NumeroAdministrador) returns (IsPossible);
+	//Função que elimina Conta de Operador e retorna se foi bem sucedido a operação ou não
+	rpc EliminarOperador (OperadorPerfil) returns (IsPossible);
+	//Função que adiciona Conta de Operador e retorna se foi bem sucedido a operação ou não
+	rpc AdicionarOperador (OperadorPerfil) returns (IsPossible);
+	//Função que coloca uma conta Operador Externo a Administrador e retorna se foi bem sucedido a operação ou não
+	rpc OperadorToAdmin (OperadorPerfil) returns (IsPossible);
+	//Função que coloca uma conta Administrador a Operador Externo e retorna se foi bem sucedido a operação ou não
+	rpc AdminToOperador (OperadorPerfil) returns (IsPossible);
+	//Função que coloca os dados de uma lista na base de dados e retorna se foi bem sucedido a operação ou não
+	rpc DescarregarCSVFile (ListaInstalacao) returns (IsPossible);
+}
+//Lista de Instalacoes utilizada para armazenar as informações do ficheiro CSV
+message ListaInstalacao{
+	repeated Instalacao Instalacao = 1;
+}
+//Mensagem que contem bool para retornar em varias funções para informar se a operação foi bem sucedida ou nao
+message IsPossible{
+	bool IsPossible = 1;
+}
+//Mensagem vazia para funções que não tem parametros de entrada
+message tempvar {
+	string tempString = 1;
+}
+//Mensagem que contem o numero de administrador de uma instalacao
+message NumeroAdministrador{
+	int32 NumAdmin = 1;
+}
+//Mensagem bool para verificar Contas
+message VerificarConta{
+	bool Existente = 1;
+}
+//Mensagem Operador para armazenar só o nome e a PalavraPasse
+message Operador{
+	string NameOperador = 1;
+	string PalavraPasse = 2;
+}
+//Mensagem Instalacao com o numero de Administrador, o Domicilio, a Tecnologia utilizada, a Modalidade, o Estado e a Data
+message Instalacao{
+	string num_Admin = 1;
+	string Domicilio = 2;
+	string Tecnologia = 3;
+	string Modalidade = 4;
+	string Estado = 5;
+	string Data = 6;
+}
+//Mensagem OperadorPerfil com todas as informações de uma conta Operador
+message OperadorPerfil{
+	int32 id = 1;
+	string NomeOperador = 2;
+	string PalavraPasse = 3;
+	bool IsAdmin = 4;
+}

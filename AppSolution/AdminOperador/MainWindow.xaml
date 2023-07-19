@@ -1,0 +1,18 @@
+﻿<Window x:Class="AdminOperador.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdminOperador"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="#FF333333">
+        <Label Content="Login - Administrador" HorizontalAlignment="Center" Height="56" Margin="0,60,0,0" VerticalAlignment="Top" Width="356" FontFamily="Arial" FontSize="36" Foreground="White"/>
+        <Label Content="Nome do Operador&#xD;&#xA;" HorizontalAlignment="Left" Height="27" Margin="211,146,0,0" VerticalAlignment="Top" Width="154" Background="Transparent" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontSize="16"/>
+        <Label Content="Palavra-Passe&#xD;&#xA;" HorizontalAlignment="Left" Height="27" Margin="211,221,0,0" VerticalAlignment="Top" Width="123" Background="Transparent" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontSize="16"/>
+        <Button x:Name="BttnConnect" Content="Conectar-se" HorizontalAlignment="Left" Height="40" Margin="288,333,0,0" VerticalAlignment="Top" Width="204" Background="{x:Null}" BorderBrush="White" Foreground="White" FontFamily="Arial" FontSize="20" BorderThickness="3,3,3,3" Click="BttnConnect_Click"/>
+        <TextBox x:Name="NomeOperadorInput" HorizontalAlignment="Left" Height="28" Margin="220,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="348" RenderTransformOrigin="0.531,0.929" FontSize="16"/>
+        <PasswordBox x:Name="PassWordOperatorInput" Height="28" Margin="220,253,232,0" VerticalAlignment="Top" Width="348" RenderTransformOrigin="0.531,0.929" FontSize="16" PasswordChar="*"/>
+
+    </Grid>
+</Window>

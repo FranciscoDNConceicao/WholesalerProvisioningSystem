@@ -1,0 +1,14 @@
+﻿<Window x:Class="AdminOperador.SetNumAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdminOperador"
+        mc:Ignorable="d"
+        Title="SetNumAdmin" Height="234" Width="544">
+    <Grid Background="#FF333333">
+        <Label Content="Número Administrativo&#xD;&#xA;" HorizontalAlignment="Left" Height="27" Margin="57,46,0,0" VerticalAlignment="Top" Width="191" Background="Transparent" Foreground="White" FontFamily="Arial" FontWeight="Bold" FontSize="16"/>
+        <TextBox x:Name="NomeOperadorInput" HorizontalAlignment="Left" Height="28" Margin="253,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" RenderTransformOrigin="0.531,0.929" FontSize="16"/>
+        <Button x:Name="BttnSetNumAdmin" Content="Submeter" HorizontalAlignment="Center" Height="40" Margin="0,120,0,0" VerticalAlignment="Top" Width="204" Background="{x:Null}" BorderBrush="White" Foreground="White" FontFamily="Arial" FontSize="20" BorderThickness="3,3,3,3" Click="BttnSetNumAdminClick"/>
+    </Grid>
+</Window>
