@@ -1,4 +1,4 @@
-# WholesalerProvisioningSystem
+# Wholesaler Provisioning System
 The Wholesaler Provisioning System is designed to facilitate the provisioning of fiber lines associated with households by external operators. The system allows for reservation, activation/deactivation, and termination of fiber lines based on defined modalities.
 The telecommunications operators, in order to expand their fixed network coverage, establish agreements with other operators to share information about households where they have coverage and can provide services. The system created in the previous practical work is extended to enable external operators to access and perform the provisioning actions.
 
