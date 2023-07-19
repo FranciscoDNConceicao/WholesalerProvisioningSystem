@@ -32,7 +32,7 @@ The server-side procedures  be implemented as remote procedures in a client/serv
         The client subscribes to the "EVENTS" topic created by the server to receive termination notifications.
         The server publishes the corresponding termination message to the "EVENTS" topic. Sleep can be used to simulate the process.
 
-The server must:
+The server:
 
     Identify and authenticate each operator performing the requests.
     Allow the administrator to manage the available coverage for each operator.
